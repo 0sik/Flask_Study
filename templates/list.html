@@ -1,5 +1,5 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>리스트 보여주기</title><style>
-    /* cspell:disable-file */
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>등록한 집 목록 보기</title><style>
     /* webkit printing magic: print all background colors */
     html {
         -webkit-print-color-adjust: exact;
@@ -283,29 +283,6 @@
         margin-right: 1em;
     }
     
-    .simple-table {
-        margin-top: 1em;
-        font-size: 0.875rem;
-        empty-cells: show;
-    }
-    .simple-table td {
-        height: 29px;
-        min-width: 120px;
-    }
-    
-    .simple-table th {
-        height: 29px;
-        min-width: 120px;
-    }
-    
-    .simple-table-header-color {
-        background: rgb(247, 246, 243);
-        color: black;
-    }
-    .simple-table-header {
-        font-weight: 500;
-    }
-    
     time {
         opacity: 0.5;
     }
@@ -343,7 +320,7 @@
         display: block;
         object-fit: cover;
         width: 100%;
-        max-height: 30vh;
+        height: 30vh;
     }
     
     .page-header-icon {
@@ -484,169 +461,151 @@
         margin-top: 0.25em;
     }
     
-    .sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-    .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-    .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+    .code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+    .serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
     .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-    .pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-    .pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-    .pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-    .pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-    .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-    .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-    .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-    .pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-    .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-    .pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-    .pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-    .pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-    .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-    .pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-    .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-    .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+    .pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+    
+    .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+    
+    .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+    
+    .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+    
     .highlight-default {
-        color: rgba(55, 53, 47, 1);
     }
     .highlight-gray {
-        color: rgba(120, 119, 116, 1);
-        fill: rgba(120, 119, 116, 1);
+        color: rgb(155,154,151);
     }
     .highlight-brown {
-        color: rgba(159, 107, 83, 1);
-        fill: rgba(159, 107, 83, 1);
+        color: rgb(100,71,58);
     }
     .highlight-orange {
-        color: rgba(217, 115, 13, 1);
-        fill: rgba(217, 115, 13, 1);
+        color: rgb(217,115,13);
     }
     .highlight-yellow {
-        color: rgba(203, 145, 47, 1);
-        fill: rgba(203, 145, 47, 1);
+        color: rgb(223,171,1);
     }
     .highlight-teal {
-        color: rgba(68, 131, 97, 1);
-        fill: rgba(68, 131, 97, 1);
+        color: rgb(15,123,108);
     }
     .highlight-blue {
-        color: rgba(51, 126, 169, 1);
-        fill: rgba(51, 126, 169, 1);
+        color: rgb(11,110,153);
     }
     .highlight-purple {
-        color: rgba(144, 101, 176, 1);
-        fill: rgba(144, 101, 176, 1);
+        color: rgb(105,64,165);
     }
     .highlight-pink {
-        color: rgba(193, 76, 138, 1);
-        fill: rgba(193, 76, 138, 1);
+        color: rgb(173,26,114);
     }
     .highlight-red {
-        color: rgba(212, 76, 71, 1);
-        fill: rgba(212, 76, 71, 1);
+        color: rgb(224,62,62);
     }
     .highlight-gray_background {
-        background: rgba(241, 241, 239, 1);
+        background: rgb(235,236,237);
     }
     .highlight-brown_background {
-        background: rgba(244, 238, 238, 1);
+        background: rgb(233,229,227);
     }
     .highlight-orange_background {
-        background: rgba(251, 236, 221, 1);
+        background: rgb(250,235,221);
     }
     .highlight-yellow_background {
-        background: rgba(251, 243, 219, 1);
+        background: rgb(251,243,219);
     }
     .highlight-teal_background {
-        background: rgba(237, 243, 236, 1);
+        background: rgb(221,237,234);
     }
     .highlight-blue_background {
-        background: rgba(231, 243, 248, 1);
+        background: rgb(221,235,241);
     }
     .highlight-purple_background {
-        background: rgba(244, 240, 247, 0.8);
+        background: rgb(234,228,242);
     }
     .highlight-pink_background {
-        background: rgba(249, 238, 243, 0.8);
+        background: rgb(244,223,235);
     }
     .highlight-red_background {
-        background: rgba(253, 235, 236, 1);
+        background: rgb(251,228,228);
     }
     .block-color-default {
         color: inherit;
         fill: inherit;
     }
     .block-color-gray {
-        color: rgba(120, 119, 116, 1);
-        fill: rgba(120, 119, 116, 1);
+        color: rgba(55, 53, 47, 0.6);
+        fill: rgba(55, 53, 47, 0.6);
     }
     .block-color-brown {
-        color: rgba(159, 107, 83, 1);
-        fill: rgba(159, 107, 83, 1);
+        color: rgb(100,71,58);
+        fill: rgb(100,71,58);
     }
     .block-color-orange {
-        color: rgba(217, 115, 13, 1);
-        fill: rgba(217, 115, 13, 1);
+        color: rgb(217,115,13);
+        fill: rgb(217,115,13);
     }
     .block-color-yellow {
-        color: rgba(203, 145, 47, 1);
-        fill: rgba(203, 145, 47, 1);
+        color: rgb(223,171,1);
+        fill: rgb(223,171,1);
     }
     .block-color-teal {
-        color: rgba(68, 131, 97, 1);
-        fill: rgba(68, 131, 97, 1);
+        color: rgb(15,123,108);
+        fill: rgb(15,123,108);
     }
     .block-color-blue {
-        color: rgba(51, 126, 169, 1);
-        fill: rgba(51, 126, 169, 1);
+        color: rgb(11,110,153);
+        fill: rgb(11,110,153);
     }
     .block-color-purple {
-        color: rgba(144, 101, 176, 1);
-        fill: rgba(144, 101, 176, 1);
+        color: rgb(105,64,165);
+        fill: rgb(105,64,165);
     }
     .block-color-pink {
-        color: rgba(193, 76, 138, 1);
-        fill: rgba(193, 76, 138, 1);
+        color: rgb(173,26,114);
+        fill: rgb(173,26,114);
     }
     .block-color-red {
-        color: rgba(212, 76, 71, 1);
-        fill: rgba(212, 76, 71, 1);
+        color: rgb(224,62,62);
+        fill: rgb(224,62,62);
     }
     .block-color-gray_background {
-        background: rgba(241, 241, 239, 1);
+        background: rgb(235,236,237);
     }
     .block-color-brown_background {
-        background: rgba(244, 238, 238, 1);
+        background: rgb(233,229,227);
     }
     .block-color-orange_background {
-        background: rgba(251, 236, 221, 1);
+        background: rgb(250,235,221);
     }
     .block-color-yellow_background {
-        background: rgba(251, 243, 219, 1);
+        background: rgb(251,243,219);
     }
     .block-color-teal_background {
-        background: rgba(237, 243, 236, 1);
+        background: rgb(221,237,234);
     }
     .block-color-blue_background {
-        background: rgba(231, 243, 248, 1);
+        background: rgb(221,235,241);
     }
     .block-color-purple_background {
-        background: rgba(244, 240, 247, 0.8);
+        background: rgb(234,228,242);
     }
     .block-color-pink_background {
-        background: rgba(249, 238, 243, 0.8);
+        background: rgb(244,223,235);
     }
     .block-color-red_background {
-        background: rgba(253, 235, 236, 1);
+        background: rgb(251,228,228);
     }
-    .select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-    .select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-    .select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-    .select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-    .select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
-    .select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-    .select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-    .select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-    .select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-    .select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+    .select-value-color-default { background-color: rgba(206,205,202,0.5); }
+    .select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+    .select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+    .select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+    .select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+    .select-value-color-green { background-color: rgba(0,135,107,0.2); }
+    .select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+    .select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+    .select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+    .select-value-color-red { background-color: rgba(255,0,26,0.2); }
     
     .checkbox {
         display: inline-flex;
@@ -666,5 +625,8 @@
         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
     }
         
-    </style></head><body><article id="49a99179-3d3c-49cb-bcb9-d0ea1a68937f" class="page sans"><header><h1 class="page-title">리스트 보여주기</h1></header><div class="page-body"><p id="177f9295-cd4a-4b66-b02a-948ac78f76d2" class="">
-    </p><div id="45eb2595-8a9c-4c5d-b8c7-9754db308bae" class="collection-content"><h4 class="collection-title">리스트 보여주기</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>이름</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>태그</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>텍스트</th></tr></thead><tbody><tr id="2cdf10a4-b94e-497d-8fcf-1910608c6a9a"><td class="cell-title"><a href="https://www.notion.so/zero-2cdf10a4b94e497d8fcf1910608c6a9a">{{zero}}</a></td><td class="cell-xxJV">{{one}}</td><td class="cell-kiYX">{{two}}</td></tr><tr id="c47fc008-ddaa-4042-8623-e9a80148f7cc"><td class="cell-title"><a href="https://www.notion.so/c47fc008ddaa40428623e9a80148f7cc">제목 없음</a></td><td class="cell-xxJV"></td><td class="cell-kiYX"></td></tr><tr id="c320989b-2007-44e9-a2f5-cd985a0b346e"><td class="cell-title"><a href="https://www.notion.so/c320989b200744e9a2f5cd985a0b346e">제목 없음</a></td><td class="cell-xxJV"></td><td class="cell-kiYX"></td></tr></tbody></table></div></div></article></body></html>
+    </style></head><body><article id="b041835d-7a94-40f8-a388-e695bf0abc72" class="page sans"><header><h1 class="page-title">등록한 집 목록 보기</h1></header><div class="page-body"><p id="1dfa0171-0820-407a-a3ad-addf93f4dc07" class="">
+        </p>{% if length != 0%}{% for house in house_list %}<a href = {{url_for("house_info", index = house[0])}}><h2 id="84fc2feb-e628-4944-ba40-8cbca7967142" class="">{{house[1]}}</h2></a>{% endfor %}{% else %}<h2 id="84fc2feb-e628-4944-ba40-8cbca7967142" class="">집을 등록해주세요</h2>{% endif %}
+        
+        
+        </div></article></body></html>
